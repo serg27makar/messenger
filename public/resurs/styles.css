@@ -59,14 +59,18 @@
     background: cornflowerblue;
     height: auto;
     padding: 6px;
-    border-radius: 25px 25px 0px;
+    border-radius: 25px 25px 0;
+    width: fit-content;
+    position: sticky;
+    left: 31em;
 }
 #recmessage{
     border-style: groove;
     background: darkkhaki;
     height: auto;
     padding: 6px;
-    border-radius: 0px 25px 25px;
+    border-radius: 0 25px 25px;
+    width: fit-content;
 }
 #userText{
     min-height: 6em;
@@ -206,7 +210,7 @@
 .prof{
     position: absolute;
     left: 20em;
-    top: 0em;
+    top: 0;
     height: 5em;
     width: 42em;
     z-index: 1;
