@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import {Redirect} from 'react-router-dom';
 import Textresult from './Textresult'
 import Navigation from "./Navigation";
-import {setActionUserId, setActionUserName, setActionUserAvatar, setActionUserFriends, setActionUserFriendsList} from '../../actions/index'
+import {setActionUserId, setActionUserName,
+    setActionUserAvatar, setActionUserFriendsList} from '../../actions/index'
 import {connect} from 'react-redux'
 import {setActionServerPost} from '../../utilite/serverAxios'
 import {linksArr} from  "./linksArr"
-
 
 let linkVar = [];
 
@@ -51,7 +51,6 @@ class Login extends Component {
             password: this.state.userPassword
         };
         setActionServerPost(variant,this.codeFun);
-
     };
 
     linkState=(li)=>{
@@ -113,9 +112,6 @@ const mapDispatchToProps = dispatch => {
         },
         setUserAvatarFunction: (avatar) => {
             dispatch(setActionUserAvatar(avatar))
-        },
-        setUserFriendsFunction: (friends) => {
-            dispatch(setActionUserFriends(friends))
         },
         setUserFrendsListFunction: (friendslist) => {
             dispatch(setActionUserFriendsList(friendslist))

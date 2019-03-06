@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { setActionUserBlock, setActionUserWhoSpeak} from '../../actions/index'
 import {connect} from 'react-redux'
 
 class Sms extends Component {
@@ -43,19 +42,7 @@ function MapStateToProps(state) {
         userId: state.userInfo.userId,
         activFriend: state.userInfo.activFriend,
         messages: state.userInfo.messages,
-        whoSpeak: state.userInfo.whoSpeak,
     }
 }
-const mapDispatchToProps = dispatch => {
-    return{
-        setUserBlockFunction: (messages) => {
-            dispatch(setActionUserBlock(messages))
-        },
-        setFunctionWhoSpeak: (whoSpeak) => {
-            dispatch(setActionUserWhoSpeak(whoSpeak))
-        },
 
-    }
-};
-
-export default connect(MapStateToProps, mapDispatchToProps)(Sms);
+export default connect(MapStateToProps)(Sms);

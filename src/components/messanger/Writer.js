@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom';
-import {setActionUserId, setActionUserName, setActionUserBlock, setActionChat, setActionUserBlockDel} from '../../actions/index'
+import {setActionUserBlock} from '../../actions/index'
 import {chateSmsIns} from "../../socketutilite/socketabonents"
 
 class Writer extends Component {
@@ -84,22 +84,12 @@ function MapStateToProps(state) {
         messages: state.userInfo.messages,
         userName: state.userInfo.userName,
         activFriend: state.userInfo.activFriend,
-        usCh: state.userInfo.usCh,
     }
 }
 const mapDispatchToProps = dispatch => {
     return{
-        setUserIdFunction: (userId) => {
-            dispatch(setActionUserId(userId))
-        },
         setUserBlockFunction: (messages) => {
             dispatch(setActionUserBlock(messages))
-        },
-        setUserNameFunction: (userName) => {
-            dispatch(setActionUserName(userName))
-        },
-        setFunctionChat: (usCh) => {
-            dispatch(setActionChat(usCh))
         },
     }
 };

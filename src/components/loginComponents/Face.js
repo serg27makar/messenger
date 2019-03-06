@@ -1,5 +1,4 @@
 import React from 'react'
-import { setActionUserAvatar} from '../../actions/index'
 import {connect} from 'react-redux'
 
 class Face extends React.Component {
@@ -29,12 +28,5 @@ function MapStateToProps(state) {
         userName: state.userInfo.userName,
     }
 }
-const mapDispatchToProps = dispatch => {
-    return{
-        setUserAvatarFunction: (avatar) => {
-            dispatch(setActionUserAvatar(avatar))
-        },
-    }
-};
 
-export default connect(MapStateToProps, mapDispatchToProps)(Face);
+export default connect(MapStateToProps)(Face);

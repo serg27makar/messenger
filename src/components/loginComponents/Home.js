@@ -4,9 +4,8 @@ import {linksArr} from './linksArr'
 import Textresult from "./Textresult";
 import {Redirect} from 'react-router-dom';
 import {connect} from 'react-redux'
-import {setActionUserId, setActionUserName, setActionUserAvatar, setActionUserFriends, setActionUserFriendsList} from '../../actions/index'
+import {setActionUserId, setActionUserName, setActionUserAvatar} from '../../actions/index'
 import {setActionServerGet} from '../../utilite/serverGet'
-
 
 let linkVar=[];
 
@@ -31,7 +30,6 @@ class Home extends Component {
 
         }
     };
-
 
     render() {
         if (this.props.userId) {
@@ -58,8 +56,6 @@ function MapStateToProps(state) {
         userId: state.userInfo.userId,
         userName: state.userInfo.userName,
         avatar: state.userInfo.avatar,
-        friendslist: state.userInfo.friendslist,
-        userFriends: state.userInfo.userFriends,
     }
 }
 const mapDispatchToProps = dispatch => {
@@ -73,13 +69,6 @@ const mapDispatchToProps = dispatch => {
         setUserAvatarFunction: (avatar) => {
             dispatch(setActionUserAvatar(avatar))
         },
-        setUserFriendsFunction: (userFriends) => {
-            dispatch(setActionUserFriends(userFriends))
-        },
-        setUserFrendsListFunction: (friendslist) => {
-            dispatch(setActionUserFriendsList(friendslist))
-        },
-
     }
 };
 

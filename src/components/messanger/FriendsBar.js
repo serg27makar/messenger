@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {setActionUserFriendActiv, setActionUserFriendsList, setActionChat,
-    setActionUserWhoSpeak, setActionUserBlockDel, setActionUserBlock} from '../../actions/index';
+    setActionUserBlockDel, setActionUserBlock} from '../../actions/index';
 import {friendslist} from "../../socketutilite/socketabonents"
 import {friendsDell} from "../../socketutilite/socketabonents"
 import {chateSms} from "../../socketutilite/socketabonents"
@@ -36,15 +36,17 @@ class FriendsBar extends Component {
     };
 
     back = (data) => {
-        if (data.length !== this.props.usCh.length) {
-            this.props.setFunctionChat(data);
-            this.props.setUserBlockFunctionDel([]);
-            data.map((sms) => {
-                if (sms.chatId === this.props.userId + ' ' + this.props.activFriend.activId
-                    || sms.chatId === this.props.activFriend.activId + ' ' + this.props.userId) {
-                    this.props.setUserBlockFunction(sms);
-                }
-            });
+        if(this.props.userId) {
+            if (data.length !== this.props.usCh.length) {
+                this.props.setFunctionChat(data);
+                this.props.setUserBlockFunctionDel([]);
+                data.map((sms) => {
+                    if (sms.chatId === this.props.userId + ' ' + this.props.activFriend.activId
+                        || sms.chatId === this.props.activFriend.activId + ' ' + this.props.userId) {
+                        this.props.setUserBlockFunction(sms);
+                    }
+                });
+            }
         }
     };
 
@@ -98,7 +100,6 @@ function MapStateToProps(state) {
         activFriend: state.userInfo.activFriend,
         friendslist: state.userInfo.friendslist,
         messages: state.userInfo.messages,
-        whoSpeak: state.userInfo.whoSpeak,
         usCh: state.userInfo.usCh,
     }
 }
@@ -116,9 +117,6 @@ const mapDispatchToProps = dispatch => {
         },
         setUserBlockFunctionDel: (messages) => {
             dispatch(setActionUserBlockDel(messages))
-        },
-        setFunctionWhoSpeak: (whoSpeak) => {
-            dispatch(setActionUserWhoSpeak(whoSpeak))
         },
         setFunctionChat: (usCh) => {
             dispatch(setActionChat(usCh))

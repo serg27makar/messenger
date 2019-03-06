@@ -16,12 +16,7 @@ class Menu extends React.Component{
     logout = () =>{
         this.props.setUserIdFunction('');
         localStorage.token = '';
-        this.props.setUserFrendsListFunction([]);
-        this.props.setUserNameFunction('');
-        this.props.setUserAvatarFunction('');
-        this.props.setUserAbonentsFunction([]);
-        this.props.setFunctionChat([]);
-        this.props.setFunctionWhoSpeak('');
+//        this.props.setFunctionChat([]);
         this.props.setUserBlockFunctionDel([]);
         this.props.setUserFriendActiv({});
     };
