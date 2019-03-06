@@ -1,0 +1,213 @@
+.chat{
+    background: lightgray;
+    position: relative;
+    height: 34em;
+    width: 40em;
+    top: -46em;
+    left: 21em;
+    padding: 1em;
+}
+.chatWindow{
+    background: #dddddd;
+    position: relative;
+    height: 29em;
+    width: 40em;
+    top: 4em;
+    left: -1em;
+    padding: 1em;
+    overflow: auto;
+}
+.abonents{
+    background: darkcyan;
+    position: relative;
+    height: 25em;
+    width: 20em;
+    overflow: auto;
+}
+.chatUser{
+    background: lightgray;
+    position: relative;
+    top: -46em;
+    left: 21em;
+    height: 9em;
+    width: 40em;
+    padding: 1em;
+}
+.profile{
+    background: #306363;
+    position: relative;
+    top: 1em;
+    left: 1em;
+    height: 10em;
+    width: 18em;
+    padding: 1em;
+    color: white;
+ }
+.Login{
+    background: aqua;
+    border-style: double;
+    height: 30em;
+    width: 30em;
+    border-radius: 20px;
+    position: fixed;
+    top: 5em;
+    left: 30%;
+    text-align: center;
+}
+#message{
+    border-style: groove;
+    background: cornflowerblue;
+    height: auto;
+    padding: 6px;
+    border-radius: 25px 25px 0px;
+}
+#recmessage{
+    border-style: groove;
+    background: darkkhaki;
+    height: auto;
+    padding: 6px;
+    border-radius: 0px 25px 25px;
+}
+#userText{
+    min-height: 6em;
+    max-height: 6em;
+    min-width: 39.5em;
+    max-width: 39.5em;
+    padding: 3px;
+    font-size: large;
+    border: white;
+    display: table;
+}
+#sendMessage{
+    margin: -8px;
+    font-size: 35px;
+    font-family: fantasy;
+    left: 13em;
+    position: relative;
+    background: none;
+    border: none;
+    color: cornflowerblue;
+}
+
+#logAut{
+    margin: 10px;
+    font-size: large;
+    position: relative;
+    color: red;
+}
+
+#sendRegister{
+    padding: 10px;
+    border-radius: 5px;
+    background: chartreuse;
+    font-size: large;
+}
+.Avatars{
+    margin: 2em;
+    width: 332px;
+    border-style: double;
+    display: flex;
+    flex-wrap: wrap;
+}
+#avatar{
+    border-style: double;
+    display: block;
+    height: 50px;
+    margin: 5px;
+}
+#face{
+    position: absolute;
+    left: 1em;
+    top: 20em;
+}
+#abonent{
+    padding: 15px;
+    margin: 1px;
+    color: black;
+}
+#invite{
+    left: 2em;
+    position: relative;
+    top: -1em;
+    height: 3em;
+    font-weight: 600;
+    background: chartreuse;
+}
+#delete{
+    left: 5em;
+    position: relative;
+    top: -1em;
+    height: 3em;
+    font-weight: 600;
+    background: coral;
+}
+#open{
+    left: 5em;
+    position: relative;
+    top: -1em;
+    height: 3em;
+    font-weight: 600;
+    background: chartreuse;
+}
+.friend{
+    position: absolute;
+    width: inherit;
+    background: chartreuse;
+}
+.Messanger{
+    position: fixed;
+    border-style: dashed;
+    left: 20%;
+    height: 49em;
+    width: 64em;
+}
+.friendsbar{
+    height: 35em;
+    width: 20em;
+    background: #306363;
+    position: relative;
+    left: 1em;
+    top: 1em;
+    overflow: auto;
+}
+#menu{
+    position: relative;
+    top: -10em;
+    left: 12em;
+    height: 5em;
+    width: 6em;
+}
+
+#search{
+    margin: 10px;
+    font-size: large;
+    position: relative;
+    height: 3em;
+    width: 4em;
+    color: green;
+}
+#close{
+    left: 10em;
+    top: -2em;
+    position: relative;
+    font-size: large;
+}
+#abonBar{
+    display: none;
+    border-style: groove;
+    border-radius: 10px;
+    background: aquamarine;
+    position: fixed;
+    height: 32em;
+    width: 20em;
+    top: 5em;
+    left: 40%;
+}
+.prof{
+    position: absolute;
+    left: 20em;
+    top: 0em;
+    height: 5em;
+    width: 42em;
+    z-index: 1;
+}

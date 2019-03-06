@@ -1,0 +1,76 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
+
+PATH: 
+  C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\PuTTY\;C:\Users\Alex\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin\;C:\Users\Alex\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Alex\AppData\Local\Programs\Python\Python37\;C:\AppServ\Apache24\bin;C:\AppServ\php5;C:\AppServ\MySQL\bin;C:\Users\Alex\AppData\Local\Microsoft\WindowsApps;C:\Users\Alex\AppData\Roaming\npm;C:\Users\Alex\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\Alex\AppData\Local\Yarn\bin
+
+Yarn version: 
+  1.13.0
+
+Node version: 
+  8.14.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: F:\newProjects\mychat\chat\package.json: Unexpected token } in JSON at position 588
+      at JSON.parse (<anonymous>)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:304:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:315:13
+      at <anonymous>
+
+npm manifest: 
+  {
+    "name": "chat",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "axios": "^0.18.0",
+      "body-parser": "^1.18.3",
+      "cors": "^2.8.5",
+      "expres": "^0.0.5",
+      "mongodb": "^3.1.13",
+      "nodemon": "^1.18.10",
+      "preventdefault": "^0.1.1",
+      "react": "^16.8.1",
+      "react-dom": "^16.8.1",
+      "react-redux": "^6.0.1",
+      "react-router": "^4.3.1",
+      "react-router-dom": "^4.3.1",
+      "react-scripts": "2.1.5",
+      "reducers": "^3.0.0-alpha",
+      "redux": "^4.0.1",
+      "redux-thunk": "^2.3.0",
+      "socket.io": "^2.2.0",
+      "socket.io-client": "^2.2.0",
+    },
+    "scripts": {
+      "start": "concurrently \"npm run server\" \"npm run client\"",
+      "server": "node server",
+      "client": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+      "extends": "react-app"
+    },
+    "browserslist": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+    ],
+    "devDependencies": {
+      "concurrently": "^4.1.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
