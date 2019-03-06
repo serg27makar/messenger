@@ -95,9 +95,6 @@ const mapDispatchToProps = dispatch => {
         setUserBlockFunction: (messages) => {
             dispatch(setActionUserBlock(messages))
         },
-        setUserBlockFunctionDel: (messages) => {
-            dispatch(setActionUserBlockDel(messages))
-        },
         setUserNameFunction: (userName) => {
             dispatch(setActionUserName(userName))
         },

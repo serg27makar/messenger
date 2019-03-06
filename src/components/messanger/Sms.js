@@ -12,11 +12,6 @@ class Sms extends Component {
     scrollToBottom = () => {
         this.messagesEnd.scrollIntoView({ behavior: "smooth" });
     };
-    componentDidMount() {
-        this.setState({
-            dummy: true
-        });
-    }
     componentDidUpdate() {
         this.scrollToBottom();
     }
@@ -27,6 +22,7 @@ class Sms extends Component {
         return (
             <div>
                 <div >{this.props.messages.map((messages)=>{
+                    if(!messages.chatId)return;
                     return <div id={(messages.chatId === this.props.userId + ' ' + this.props.activFriend.activId ? 'message' : 'recmessage')} key={messages._id}>
                         <h4 style={{margin: '0'}}> { messages.userName}:</h4>
                         {messages.Text}

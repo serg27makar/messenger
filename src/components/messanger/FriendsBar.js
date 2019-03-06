@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import {setActionUserFriendActiv, setActionUserFriendsList, setActionChat,
     setActionUserWhoSpeak, setActionUserBlockDel, setActionUserBlock} from '../../actions/index';
 import {friendslist} from "../../socketutilite/socketabonents"
-import {Redirect} from 'react-router-dom';
 import {friendsDell} from "../../socketutilite/socketabonents"
 import {chateSms} from "../../socketutilite/socketabonents"
 
