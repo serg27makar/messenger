@@ -7,7 +7,6 @@ import {friendsDell} from "../../socketutilite/socketabonents"
 import {chateSms} from "../../socketutilite/socketabonents"
 
 class FriendsBar extends Component {
-
     constructor(props){
         super(props);
         if (this.props.userId)friendslist(this.props.userId, this.call);
@@ -17,9 +16,6 @@ class FriendsBar extends Component {
     }
     call = res => {
         this.props.setUserFrendsListFunction(res);
-        this.setState({
-            a: !this.state.a
-        });
     };
 
     open=(e)=>{
@@ -50,9 +46,6 @@ class FriendsBar extends Component {
                 }
             });
         }
-        this.setState({
-            a: !this.state.a
-        });
     };
 
     del =(e)=>{
@@ -71,7 +64,6 @@ class FriendsBar extends Component {
             a: !this.state.a
         });
     };
-
     render(){
         if (!this.props.friendslist || this.props.friendslist.length === 0){
             return <div className="friendsbar"></div>

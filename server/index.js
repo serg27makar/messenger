@@ -20,10 +20,7 @@ app.use('/resurse', express.static(__dirname + '/../public/resurs'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use((request,response,next)=>{
-    if(request.url === '/register' || request.url === '/login'
-        || request.url === '/chat' || request.url === '/abonents'
-        || request.url === '/friends' || request.url === '/frendsupdate'
-        || request.url === '/frendsdelete' || request.url === '/chate'){
+    if(request.url === '/register' || request.url === '/login' ){
         next();
         return
     }

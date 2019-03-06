@@ -29,7 +29,7 @@ class AvatarsChois extends React.Component {
         return (
             <div style={{textAlign: '-webkit-center'}}>
                 <div className="Avatars" > {this.state.arr.map((av)=>{
-                    return <div id="avatar" onClick={this.numAvatar}>
+                    return <div id="avatar" onClick={this.numAvatar} key={av}>
                         <img src= {this.state.a + av}
                              title="avatar"
                         /> </div>
