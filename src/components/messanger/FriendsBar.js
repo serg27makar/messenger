@@ -1,38 +1,33 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import {setActionUserFriendActiv, setActionUserFriendsList, setActionChat,
-    setActionUserBlockDel, setActionUserBlock} from '../../actions/index';
+import {setActionUserFriendsList, setActionUserBlock, setActionChat, setActionUserBlockDel} from '../../actions/index';
 import {friendslist} from "../../socketutilite/socketabonents"
-import {friendsDell} from "../../socketutilite/socketabonents"
+import {del, open} from "../../actions/usFunction/actionFun"
 import {chateSms} from "../../socketutilite/socketabonents"
 
 class FriendsBar extends Component {
     constructor(props){
         super(props);
-        if (this.props.userId)friendslist(this.props.userId, this.call);
+        if (this.props.userId)friendslist(this.props.userId, (res)=>{
+            this.props.setUserFrendsListFunction(res);
+        });
         this.state={
             a:false,
         }
     }
-    call = res => {
-        this.props.setUserFrendsListFunction(res);
-    };
 
-    open=(e)=>{
-        this.props.setUserBlockFunction([]);
-        this.props.setFunctionChat([]);
-        this.props.setUserFriendActiv({});
+    open=(e)=> {
         let activ = {
             activId: this.props.friendslist[e.target.value].friendId,
             activAvatar: this.props.friendslist[e.target.value].friendavatar,
             activName: this.props.friendslist[e.target.value].friendName,
-
         };
-        this.props.setUserFriendActiv(activ);
+        this.props.openUser(activ);
         chateSms(this.props.userId, this.back);
         this.setState({
             a: !this.state.a
         });
+
     };
 
     back = (data) => {
@@ -59,13 +54,9 @@ class FriendsBar extends Component {
             friendavatar: this.props.friendslist[e.target.value].friendavatar,
             friendName: this.props.friendslist[e.target.value].friendName,
         };
-        this.props.setUserFriendActiv({});
-        friendsDell(data);
-        friendslist(this.props.userId, this.call);
-        this.setState({
-            a: !this.state.a
-        });
+        this.props.delUser(data);
     };
+
     render(){
         if (!this.props.friendslist || this.props.friendslist.length === 0){
             return <div className="friendsbar"></div>
@@ -89,7 +80,6 @@ class FriendsBar extends Component {
             )
         }
     }
-
 }
 
 function MapStateToProps(state) {
@@ -106,9 +96,6 @@ function MapStateToProps(state) {
 
 const mapDispatchToProps = dispatch => {
     return{
-        setUserFriendActiv: (activFriend) => {
-            dispatch(setActionUserFriendActiv(activFriend))
-        },
         setUserFrendsListFunction: (friendslist) => {
             dispatch(setActionUserFriendsList(friendslist))
         },
@@ -120,6 +107,12 @@ const mapDispatchToProps = dispatch => {
         },
         setFunctionChat: (usCh) => {
             dispatch(setActionChat(usCh))
+        },
+        delUser: (data)=>{
+            del(data,dispatch)
+        },
+        openUser: (data)=>{
+            open(data,dispatch)
         },
     }
 };

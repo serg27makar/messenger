@@ -22,7 +22,8 @@ class Sms extends Component {
             <div>
                 <div >{this.props.messages.map((messages)=>{
                     if(!messages.chatId)return console.log('пустой sms');
-                    return <div id={(messages.chatId === this.props.userId + ' ' + this.props.activFriend.activId ? 'message' : 'recmessage')} key={messages._id || messages.Data}>
+                    return <div id={(messages.chatId === this.props.userId + ' ' + this.props.activFriend.activId ? 'message' : 'recmessage')}
+                                key={messages._id || messages.Data}>
                         <h4 style={{margin: '0'}}> { messages.userName}:</h4>
                         {messages.Text}
                         <hr/>
